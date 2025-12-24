@@ -6,7 +6,6 @@ site_author: Ankit
 theme:
   name: material
   features:
-    - navigation.indexes
     - navigation.footer
   palette:
     - scheme: slate

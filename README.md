@@ -14,8 +14,6 @@ Content lives under `docs/` and is organized by topic:
 - `docs/java/`
 - `docs/python/`
 
-Each section has an `index.md` that explains what the section is meant for.
-
 ## Writing a new post
 
 Add a new Markdown file under the relevant section folder, for example:
