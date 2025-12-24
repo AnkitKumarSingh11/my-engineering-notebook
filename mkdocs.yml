@@ -1,10 +1,13 @@
-site_name: Ankit's Software Engineering Blog
+site_name: Byte-Sized Notes
 site_url: https://ankit.codes
 site_description: A blog about software engineering, programming, and technology.
 site_author: Ankit
 
 theme:
   name: material
+  features:
+    - navigation.indexes
+    - navigation.footer
   palette:
     - scheme: slate
       toggle:
@@ -17,9 +20,6 @@ theme:
 
 plugins:
   - search
-
-nav:
-  - Home: index.md
 
 markdown_extensions:
   - admonition

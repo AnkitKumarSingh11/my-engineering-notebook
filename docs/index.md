@@ -37,11 +37,14 @@ If you're a backend, data, or cloud engineer, you'll probably find something use
 
 ## 📚 Latest Blog Posts
 
-*(MkDocs will auto-populate this section if using plugins like `mkdocs-blog-plugin` or you can manually list them.)*
+Browse by topic:
 
-- [How I Migrated Applications from AWS to OCI](blog/migration-aws-oci.md)
-- [Understanding Avro + Parquet in Spark](blog/avro-parquet-spark.md)
-- [Setting Up Keycloak on Compute Instances](blog/keycloak-setup.md)
+- [Apache Spark](apache-spark/index.md)
+- [PySpark](pyspark/index.md)
+- [Big Data Engineering](big-data-engineering/index.md)
+- [System Design](system-design/index.md)
+- [Java](java/index.md)
+- [Python](python/index.md)
 
 ---
 
