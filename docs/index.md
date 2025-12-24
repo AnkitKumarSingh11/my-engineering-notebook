@@ -37,14 +37,16 @@ If you're a backend, data, or cloud engineer, you'll probably find something use
 
 ## 📚 Latest Blog Posts
 
-Browse by topic:
+Browse by topic (use the left sidebar to navigate):
 
-- [Apache Spark](apache-spark/index.md)
-- [PySpark](pyspark/index.md)
-- [Big Data Engineering](big-data-engineering/index.md)
-- [System Design](system-design/index.md)
-- [Java](java/index.md)
-- [Python](python/index.md)
+- Apache Spark
+	- [Installing Apache Spark on a Local Machine](apache-spark/install-apache-spark-local.md)
+- PySpark
+	- [PySpark: Install and Run Your First DataFrame](pyspark/install-and-first-dataframe.md)
+- Big Data Engineering
+- System Design
+- Java
+- Python
 
 ---
 
