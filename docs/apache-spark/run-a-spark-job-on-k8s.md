@@ -145,6 +145,16 @@ kubectl logs -f <executor-pod-name>
 
    - Cause: Missing runtime dependency for Kubernetes client
    - Fix: Include BouncyCastle JARs in the image or Spark classpath.
+   Download the following jars and move them to your Spark Jars. 
+   ```bash
+        mkdir ~/spark-jars/ 
+        cd ~/spark-jars
+
+        wget https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk18on/1.78.1/bcprov-jdk18on-1.78.1.jar
+        wget https://repo1.maven.org/maven2/org/bouncycastle/bcpkix-jdk18on/1.78.1/bcpkix-jdk18on-1.78.1.jar
+
+        cp ~/spark-jars/*.jar $SPARK_HOME/jars/
+   ```
 
 ---
 
