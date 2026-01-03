@@ -1,0 +1,20 @@
+language: python
+
+dist: jammy
+
+python:
+  - "3.13"
+
+cache:
+  pip: true
+
+env:
+  global:
+    - PIP_DISABLE_PIP_VERSION_CHECK=1
+
+install:
+  - python -m pip install --upgrade pip
+  - python -m pip install mkdocs mkdocs-material
+
+script:
+  - mkdocs build --strict
