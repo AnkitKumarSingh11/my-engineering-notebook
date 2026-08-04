@@ -10,6 +10,7 @@ Content lives under `docs/` and is organized by topic:
 - `docs/apache-spark/`
 - `docs/pyspark/`
 - `docs/big-data-engineering/`
+- `docs/data-structures-and-algorithms/`
 - `docs/system-design/`
 - `docs/java/`
 - `docs/python/`
