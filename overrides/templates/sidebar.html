@@ -1,0 +1,52 @@
+{% if nav|length > 1 %}
+
+{% if config.theme.topbar_sections %}
+{% set current = nav|active_section|attr('children') %}
+{% else %}
+{% set current = nav %}
+{% endif %}
+
+{% if not current %}
+{# when there is not active section, keep only the top level pages #}
+{% set current = nav|selectattr("is_page") %}
+{% endif %}
+
+{% set pages = current|selectattr("is_page")|sort(attribute="meta.order") %}
+{% set sections = current|rejectattr("is_page")|list %}
+
+{% if pages|length > 0 %}
+<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2 pt-6">
+    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+            {% for p in pages %}
+            {# warning: do not use 'page' attribute to avoid conflicts. It is used for url filter notably #}
+            {% with sidebar_item = p %}
+            {% include "templates/sidebar_item.html" %}
+            {% endwith %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+{% if sections|length > 0 %}
+<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
+    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+            {% for section in sections %}
+            {% if section.children %}
+            {% with sidebar_item = section %}
+            {% include "templates/sidebar_section.html" %}
+            {% endwith %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+
+{% endif %}
+<div
+    class="sticky -bottom-1 z-10 h-16 shrink-0 bg-gradient-to-t from-background via-background/80 to-background/50 blur-xs">
+</div>

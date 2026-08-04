@@ -1,7 +1,7 @@
 
 # Byte-Sized Notes
 
-Personal engineering notes and blog posts published using MkDocs + Material.
+Personal engineering notes and blog posts published using MkDocs + Shadcn.
 
 ## Sections
 
