@@ -1,4 +1,4 @@
-/* Navigation & Header Font Sizes */
+/* Navigation & Header Font Sizes & Weights */
 header nav a,
 header a[data-slot="button"] {
   font-size: 0.95rem !important;
@@ -10,6 +10,11 @@ header a[data-slot="button"] {
 
 [data-sidebar="menu-button"] {
   font-size: 0.925rem !important;
+  font-weight: 400 !important;
+}
+
+[data-sidebar="menu-button"][data-active="true"] {
+  font-weight: 600 !important;
 }
 
 /* Increase Left Hand Side Sidebar Menu Width */
