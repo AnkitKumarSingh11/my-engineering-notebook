@@ -4,6 +4,19 @@ Selection sort repeatedly picks the smallest value from the unsorted portion of 
 
 It is an in-place algorithm with $O(n^2)$ time complexity and $O(1)$ extra space.
 
+Example:
+
+- Input: [64, 25, 12, 22, 11]
+- Output: [11, 12, 22, 25, 64]
+
+```mermaid
+flowchart LR
+    A[Start] --> B[Find minimum in unsorted part]
+    B --> C[Swap with first unsorted element]
+    C --> D[Move boundary right]
+    D --> E[Repeat until sorted]
+```
+
 Python Code:
 ```python
 class Solution:

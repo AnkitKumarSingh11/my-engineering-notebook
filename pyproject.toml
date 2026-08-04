@@ -8,3 +8,6 @@ dependencies = [
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.7.1",
 ]
+
+[tool.vercel]
+entrypoint = "app:app"
