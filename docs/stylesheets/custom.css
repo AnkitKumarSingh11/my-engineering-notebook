@@ -1,3 +1,35 @@
+/* Navigation & Header Font Sizes */
+header nav a,
+header a[data-slot="button"] {
+  font-size: 0.95rem !important;
+}
+
+[data-sidebar="content"] {
+  font-size: 0.925rem !important;
+}
+
+[data-sidebar="menu-button"] {
+  font-size: 0.925rem !important;
+}
+
+/* Increase Left Hand Side Sidebar Menu Width */
+@media (min-width: 1024px) {
+  [data-slot="sidebar-wrapper"] {
+    --sidebar-width: 320px !important;
+    grid-template-columns: 320px minmax(0, 1fr) !important;
+  }
+
+  [data-slot="sidebar"] {
+    width: 320px !important;
+    --sidebar-menu-width: 300px !important;
+  }
+
+  [data-sidebar="content"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 /* Expand content section width and reduce left/right padding */
 article {
   width: 100% !important;
