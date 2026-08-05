@@ -1,4 +1,8 @@
-# 👋 Hi, I'm Ankit Kumar
+---
+title: Hi, I am Ankit Kumar
+---
+
+# 👋 Hi, I am Ankit Kumar
 
 Welcome to my personal website — a space where I share what I learn, build, and experiment with across software engineering, cloud, and data systems.
 

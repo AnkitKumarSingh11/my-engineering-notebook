@@ -181,3 +181,25 @@ class Solution:
 ### Complexity Analysis
 - **Time Complexity:** $\mathcal{O}(N)$ — Each index in the array is visited at most twice (once by the main loop and once by the pointer `pos`), maintaining linear time complexity.
 - **Space Complexity:** $\mathcal{O}(1)$ — Operates strictly in-place with integer counters.
+
+## 5. Left Rotate Array by K places
+```python
+class Solution:
+    def rotate(self, nums: list, low: int, high: int) -> None:
+        while low <= high:
+            nums[low], nums[high] = nums[high], nums[low]
+            low += 1
+            high -= 1
+
+    def rotate_array_by_k(self, nums: list, k: int) -> None:
+        n = len(nums)
+        k = k % n
+
+        self.rotate(nums, 0, k - 1)
+        self.rotate(nums, k, n - 1)
+        self.rotate(nums, 0, n - 1)
+
+    def rotateArray(self, nums, k: int) -> None:
+        self.rotate_array_by_k(nums, k)
+
+```
