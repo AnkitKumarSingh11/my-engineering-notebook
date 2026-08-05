@@ -1,0 +1,105 @@
+/* Navigation & Header Font Sizes & Weights */
+header nav a,
+header a[data-slot="button"] {
+  font-size: 0.95rem !important;
+}
+
+[data-sidebar="content"] {
+  font-size: 0.925rem !important;
+}
+
+[data-sidebar="menu-button"] {
+  font-size: 0.925rem !important;
+  font-weight: 400 !important;
+}
+
+[data-sidebar="menu-button"][data-active="true"] {
+  font-weight: 600 !important;
+}
+
+/* Increase Left Hand Side Sidebar Menu Width */
+@media (min-width: 1024px) {
+  [data-slot="sidebar-wrapper"] {
+    --sidebar-width: 320px !important;
+    grid-template-columns: 320px minmax(0, 1fr) !important;
+  }
+
+  [data-slot="sidebar"] {
+    width: 320px !important;
+    --sidebar-menu-width: 300px !important;
+  }
+
+  [data-sidebar="content"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Expand content section width and reduce left/right padding */
+article {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+
+@media (min-width: 640px) {
+  article {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  article {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+/* Reduce TOC side padding so main content area gets more width */
+#toc {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* Sidebar Padding & Alignment */
+[data-sidebar="content"] {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+[data-sidebar="menu-button"] {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+
+/* Code block container styling */
+div.codehilite, pre.codehilite, div.highlight, pre.highlight, pre {
+  background-color: var(--muted, #18181b);
+  border: 1px solid var(--border, #27272a);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+}
+
+div.codehilite pre, pre.codehilite code, div.highlight pre, pre.highlight code {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: inherit;
+}
+
+:not(pre) > code {
+  background-color: var(--muted, #27272a);
+  color: var(--foreground, #e4e4e7);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}

@@ -4,18 +4,20 @@ site_description: A blog about software engineering, programming, and technology
 site_author: Ankit
 
 theme:
-  name: material
-  features:
-    - navigation.footer
-  palette:
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
+  name: shadcn
+  custom_dir: overrides
+  katex_options:
+    delimiters:
+      - {left: "$$", right: "$$", display: true}
+      - {left: "$", right: "$", display: false}
+      - {left: "\\(", right: "\\)", display: false}
+      - {left: "\\[", right: "\\]", display: true}
+
+extra_css:
+  - stylesheets/custom.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
 
 plugins:
   - search
@@ -24,9 +26,18 @@ markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
+  - codehilite:
+      css_class: codehilite
   - toc:
       permalink: true
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.details
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      css_class: codehilite
   - pymdownx.inlinehilite
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

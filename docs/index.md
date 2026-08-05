@@ -39,6 +39,8 @@ If you're a backend, data, or cloud engineer, you'll probably find something use
 
 Browse by topic (use the left sidebar to navigate):
 
+- Data Structures & Algorithms
+	- [Arrays: Fundamental Questions & Solutions](data-structures-and-algorithms/arrays/fundamental-questions.md)
 - Apache Spark
 	- [Installing Apache Spark on a Local Machine](apache-spark/install-apache-spark-local.md)
 - PySpark
