@@ -183,9 +183,37 @@ class Solution:
 - **Space Complexity:** $\mathcal{O}(1)$ — Operates strictly in-place with integer counters.
 
 ## 5. Left Rotate Array by K places
+
+### Problem Description
+Given an array `nums` of size $N$ and an integer `k`, rotate the array to the left by `k` positions in-place.
+
+### Intuition & Approach
+A naive approach of shifting elements one by one takes $\mathcal{O}(N \times K)$ time, and using an auxiliary array takes $\mathcal{O}(N)$ extra space. The **Reversal Algorithm** achieves in-place left rotation in $\mathcal{O}(N)$ time and $\mathcal{O}(1)$ auxiliary space:
+
+1. **Normalize $k$:** Since rotating an array of size $N$ by $N$ positions results in the same array, set `k = k % N`.
+2. **Reverse First $k$ Elements:** Reverse `nums[0 ... k-1]`.
+3. **Reverse Remaining $N - k$ Elements:** Reverse `nums[k ... N-1]`.
+4. **Reverse Entire Array:** Reverse `nums[0 ... N-1]`.
+
+By reversing the two sub-parts individually and then reversing the entire array, the sub-parts are brought into their rotated positions while restoring their original relative order.
+
+### Example Walkthrough
+**Input:** `nums = [1, 2, 3, 4, 5, 6, 7]`, `k = 3` ($N = 7$)
+
+- **Step 1 (Reverse `nums[0...2]`):** `[1, 2, 3]` $\rightarrow$ `[3, 2, 1]`  
+  Array state: `[3, 2, 1, 4, 5, 6, 7]`
+- **Step 2 (Reverse `nums[3...6]`):** `[4, 5, 6, 7]` $\rightarrow$ `[7, 6, 5, 4]`  
+  Array state: `[3, 2, 1, 7, 6, 5, 4]`
+- **Step 3 (Reverse `nums[0...6]`):** Entire array reversed  
+  Array state: `[4, 5, 6, 7, 1, 2, 3]`
+
+**Output:** `[4, 5, 6, 7, 1, 2, 3]`
+
+### Python Solution
 ```python
 class Solution:
     def rotate(self, nums: list, low: int, high: int) -> None:
+        """Helper function to reverse elements in nums from index low to high in-place."""
         while low <= high:
             nums[low], nums[high] = nums[high], nums[low]
             low += 1
@@ -193,13 +221,21 @@ class Solution:
 
     def rotate_array_by_k(self, nums: list, k: int) -> None:
         n = len(nums)
+        if n == 0:
+            return
         k = k % n
 
+        # Step 1: Reverse first k elements
         self.rotate(nums, 0, k - 1)
+        # Step 2: Reverse remaining n - k elements
         self.rotate(nums, k, n - 1)
+        # Step 3: Reverse entire array
         self.rotate(nums, 0, n - 1)
 
-    def rotateArray(self, nums, k: int) -> None:
+    def rotateArray(self, nums: list, k: int) -> None:
         self.rotate_array_by_k(nums, k)
-
 ```
+
+### Complexity Analysis
+- **Time Complexity:** $\mathcal{O}(N)$ — Reversing array segments performs $k/2 + (N-k)/2 + N/2 = N$ swaps in total, yielding linear time complexity.
+- **Space Complexity:** $\mathcal{O}(1)$ — Rotation occurs completely in-place without additional memory allocation.

@@ -6,6 +6,7 @@ site_author: Ankit
 theme:
   name: shadcn
   custom_dir: overrides
+  favicon: /img/favicon.ico
   katex_options:
     delimiters:
       - {left: "$$", right: "$$", display: true}
