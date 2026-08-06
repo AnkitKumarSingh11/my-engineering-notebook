@@ -28,15 +28,14 @@ markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
-  - codehilite:
-      css_class: codehilite
   - toc:
       permalink: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
   - pymdownx.highlight:
-      css_class: codehilite
+      use_pygments: true
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.superfences:
       custom_fences:
