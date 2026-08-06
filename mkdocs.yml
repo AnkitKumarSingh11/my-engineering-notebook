@@ -6,6 +6,7 @@ site_author: Ankit
 theme:
   name: shadcn
   custom_dir: overrides
+  favicon: /img/favicon.ico
   katex_options:
     delimiters:
       - {left: "$$", right: "$$", display: true}
@@ -18,6 +19,7 @@ extra_css:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
+  - javascripts/spa.js
 
 plugins:
   - search
